@@ -19,12 +19,18 @@ use Illuminate\Support\Str;
 
 // 头像假数据
 $avatars = [
-    'http://larabbs.test/public/img/s5ehp11z6s.png',
-    'http://larabbs.test/public/img/Lhd1SHqu86.png',
-    'http://larabbs.test/public/img/LOnMrqbHJn.png',
-    'http://larabbs.test/public/img/xAuDMxteQy.png',
-    'http://larabbs.test/public/img/ZqM7iaP4CR.png',
-    'http://larabbs.test/public/img/NDnzMutoxX.png',
+//    'http://larabbs.test/public/img/s5ehp11z6s.png',
+//    'http://larabbs.test/public/img/Lhd1SHqu86.png',
+//    'http://larabbs.test/public/img/LOnMrqbHJn.png',
+//    'http://larabbs.test/public/img/xAuDMxteQy.png',
+//    'http://larabbs.test/public/img/ZqM7iaP4CR.png',
+//    'http://larabbs.test/public/img/NDnzMutoxX.png',
+    'https://cdn.learnku.com/uploads/images/201710/14/1/s5ehp11z6s.png',
+    'https://cdn.learnku.com/uploads/images/201710/14/1/Lhd1SHqu86.png',
+    'https://cdn.learnku.com/uploads/images/201710/14/1/LOnMrqbHJn.png',
+    'https://cdn.learnku.com/uploads/images/201710/14/1/xAuDMxteQy.png',
+    'https://cdn.learnku.com/uploads/images/201710/14/1/ZqM7iaP4CR.png',
+    'https://cdn.learnku.com/uploads/images/201710/14/1/NDnzMutoxX.png',
 ];
 
 $factory->define(App\Models\User::class, function (Faker $faker) use ($avatars){
