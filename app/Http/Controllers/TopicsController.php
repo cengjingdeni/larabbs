@@ -25,8 +25,9 @@ class TopicsController extends Controller
 
     public function show(Topic $topic)
     {
-        $categories = Category::all();
-        return view('topics.create_and_edit', compact('topic', 'categories'));
+        return view('topics.show', compact('topic'));
+//        $categories = Category::all();
+//        return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
 	public function create(Topic $topic)
