@@ -11,17 +11,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
       <ul class="navbar-nav mr-auto">
-{{--        <li class="nav-item active"><a class="nav-link" href="{{ route('topics.index') }}">话题</a></li>--}}
-{{--        <li class="nav-item"><a class="nav-link" href="{{ route('categories.show', 1) }}">分享</a></li>--}}
-{{--        <li class="nav-item"><a class="nav-link" href="{{ route('categories.show', 2) }}">教程</a></li>--}}
-{{--        <li class="nav-item"><a class="nav-link" href="{{ route('categories.show', 3) }}">问答</a></li>--}}
-{{--        <li class="nav-item"><a class="nav-link" href="{{ route('categories.show', 4) }}">公告</a></li>--}}
-
-{{--        <li class="nav-item {{ active_class(if_route('topics.index')) }}"><a class="nav-link" href="{{ route('topics.index') }}">话题</a></li>--}}
-{{--        <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a class="nav-link" href="{{ route('categories.show', 1) }}">分享</a></li>--}}
-{{--        <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category', 2))) }}"><a class="nav-link" href="{{ route('categories.show', 2) }}">教程</a></li>--}}
-{{--        <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category', 3))) }}"><a class="nav-link" href="{{ route('categories.show', 3) }}">问答</a></li>--}}
-{{--        <li class="nav-item {{ active_class((if_route('categories.show') && if_route_param('category', 4))) }}"><a class="nav-link" href="{{ route('categories.show', 4) }}">公告</a></li>--}}
         <li class="nav-item {{ active_class(if_route('topics.index')) }}"><a class="nav-link" href="{{ route('topics.index') }}">话题</a></li>
         <li class="nav-item {{ category_nav_active(1) }}"><a class="nav-link" href="{{ route('categories.show', 1) }}">分享</a></li>
         <li class="nav-item {{ category_nav_active(2) }}"><a class="nav-link" href="{{ route('categories.show', 2) }}">教程</a></li>
@@ -52,6 +41,13 @@
               {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              @can('manage_contents')
+                <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
+                  <i class="fas fa-tachometer-alt mr-2"></i>
+                  管理后台
+                </a>
+                <div class="dropdown-divider"></div>
+              @endcan
               <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">
                 <i class="far fa-user mr-2"></i>
                 个人中心
